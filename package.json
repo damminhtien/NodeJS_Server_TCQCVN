@@ -1,0 +1,23 @@
+{
+  "name": "nodeserver",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "stop": "bash ./bin/npm_stop.sh"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "connect-flash-plus": "^0.2.1",
+    "cookie-parser": "^1.4.3",
+    "debug": "^2.6.9",
+    "ejs": "^2.5.7",
+    "express": "^4.15.5",
+    "express-session": "^1.15.6",
+    "morgan": "^1.8.2",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pg": "^7.4.0",
+    "serve-favicon": "^2.4.5"
+  }
+}
