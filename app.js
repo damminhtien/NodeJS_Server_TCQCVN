@@ -1,30 +1,52 @@
-process.title = "tcqcvn";
 var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-
-var index = require('./routes/index');
-var users = require('./routes/users');
-
 var app = express();
+var path = require('path');
+var logger = require('morgan');
+var bodyParser = require('body-parser');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+var session = require('express-session');
+var flash = require('connect-flash-plus');
+var fs = require('fs');
+var multer = require('multer');
+app.use(session({
+    secret: 'keyboard cat',
+    cookie: { maxAge: 60 * 1000 * 60 },
+    saveUninitialized: true,
+    resave: true
+}));
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+var pg = require("pg");
+const pool = new pg.Pool({
+    user: 'postgres',
+    host: 'localhost',
+    database: 'tcqcxd',
+    password: 'dmt',
+    port: 2197,
+});
 
-// uncomment after placing your favicon in /public
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(flash());
+var cookieParser = require('cookie-parser');
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
+app.use(express.static("./public"));
+app.set("view engine", "ejs");
+app.set("views", "./views");
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(passport.initialize());
+app.use(cookieParser());
+app.use(flash());
+app.use(passport.session());
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+
+var index = require('./routes/index');
+var tintuc = require('./routes/tintuc');
+var gioithieu = require('./routes/gioithieu');
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/tintuc', tintuc);
+app.use('/gioithieu', gioithieu);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

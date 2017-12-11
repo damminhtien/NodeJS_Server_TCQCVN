@@ -1,0 +1,152 @@
+@charset "utf-8";
+/* CSS Document */
+
+.MainMenu {									/* Định nghĩa tính chất cả */
+	background-color:rgb(30,96,140);		/*màu nền của khối MainMenu: thanh menu bar */
+	height: 32px;
+	width: auto;
+	margin-left:0px;
+	font-size:14px;
+	/*float:none;*/
+	/*overflow:hidden;*/
+}	
+
+.MainMenu .MainMenu ul{
+	list-style:none;
+	text-decoration:none;
+}
+
+.MainMenu li {
+	position:relative;
+	display:inline-block;
+	vertical-align:top;
+	margin-left: 0px; 			/* solve the 4 pixels spacing between list-items */
+	
+}
+
+.MainMenu ul li ul{
+	position: absolute;
+	z-index: 999;
+}
+/*-------------------------------------------------*/
+.MenuBar a{									/*Định nghĩa tinh chất các thẻ a trong khối MainMenu*/
+	color:white;
+	font-size:14px;
+	display:block;
+	text-decoration:none; /*Bor gachj chaan*/
+	padding: 6px 20px;
+}
+
+.MenuBar, .MenuBar ul{	/*Định nghĩa tinh chất các thẻ ul và Menubar*/
+	list-style: none;  /*bo het dau gạch dau dong  trong DS của MenuBar vaf MenuBar ul*/
+	margin: 0;
+	padding: 0;
+}
+
+
+.MenuBar li{
+	position:relative;
+}
+
+
+.MenuBar a:hover { /*Di chuôt trên thẻ a của khối .MenuBar*/
+	 /* background:#000; Không cần thiết*/
+}
+
+/*CSS for Level 1: main menu*/
+.MenuBar > li {					/* Tính chất các thẻ li (list item) của lớp MenuBar*/
+	display:inline-block;		/* Nằm trên cùng một dòng*/
+	vertical-align: top;
+	margin-left: 0px; 			/* solve the 4 pixels spacing between list-items */
+	border-right: 1px dotted #dedede;
+}
+
+.MenuBar > li:first-Child{  	/* Tính chất của phần tử dầu tiên của lớp .MainMenuBar*/
+	margin-left:0px;
+}
+
+.MenuBar > li > a{				/* Tính chất của thẻ a trong thẻ li của lớp .MainMenuBar*/
+	/* background:rgb(31,95,141); Không cần thiêt: đặt trùng màu nền của lớp .MenuBar*/
+	font-size:16px;
+}
+
+.MenuBar > li > a:hover{ /* Di chuột trên thẻ a của thẻ li của lớp MenuBar: Các menu mức 1*/
+	background:rgb(60,110,160);
+}
+
+
+/*CSS for second level menubar: dropmenu*/
+
+.MenuBar > li > ul {
+    display:none;	/*Không hiển thị*/
+	padding-top:2px;  /*Cách ra 2 điểm để tránh chồng lên menu bar*/
+	text-align:left;
+	width:240px;
+	position:absolute;
+	left:0;
+	top:100%;
+	z-index:9999;
+}
+
+.MenuBar >li:hover >ul{ /*Tính chất của thẻ ul trong thẻ il khi di chuột trên thẻ li*/
+	display:block;
+	background:rgb(10,80,120);		/*Màu nền của menu mưc 2 khi di chuột trên mức 1*/
+	width:240px;
+}
+
+.dMenuBar ul li a { /*nền của các thành phần a trong li của ul của dropmenu*/
+     background:#EF0;
+}
+.MenuBar ul li a:hover {
+	background:#0CC;
+}
+
+/* Level 3 */
+.MenuBar > li > ul > li > ul { /*Tính chất các danh sách mức 3*/
+	text-align: left;
+	display: none;
+	width:auto;
+	/*background: rgb(31,95,141);*/  
+	position: absolute;
+	left: 100%;
+	top: 25%;
+	z-index: 9999;
+}
+
+.MenuBar > li > ul > li:hover > ul { /*Khi di chuot den li muc 2*/
+	 display: block;              /* hien thi danh sach muc 3 theo khoi*/
+	 width:240px;
+	 background: rgb(60,100,140);	/*Màu nền của menu mức 3 khi di chuot tren muc 2*/
+}
+
+
+.MenuBar ul ul li {}
+.MenuBar ul ul li a {}
+.MenuBar ul ul li a:hover {}
+
+/*=========================================================================================*/
+.SecondMenu {									/* Định nghĩa tính chất cả */
+	clear:both;
+	background-color:#E0E0E0;		/*màu nền của khối Second Menu: thanh menu bar bên dưới*/
+	height: 32px;
+	width: 960px;
+	margin-left:0px;
+	overflow:hidden;
+}
+
+.SecondMenu,.SecondMenu ul{	/*Định nghĩa tinh chất các thẻ ul và Menubar*/
+	list-style: none;  /*bo het dau gạch đau  trong DS của MenuBar vaf MenuBar ul*/
+	margin: 0;
+	padding: 0px ;
+	text-decoration:none;
+}
+.SecondMenu li{
+	display:inline-block;
+	padding: 6px 10px 6px 1px
+}
+
+.SecondMenu li > a{
+	color:while;
+	text-decoration:none;
+		font-size:16px;
+}

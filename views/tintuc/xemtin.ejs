@@ -1,0 +1,69 @@
+<%if(tintuc != null){%>
+<%include ../header%>
+</head>
+    <body>
+        <%include ../top%>
+        <div class="container" style="line-height: 25px;">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"><span id="postTitle">Nội dung bài viết<span style="float: right;"> id : <%= tintuc.id %></span></span> </h4>
+                        </div>
+                        <div class="panel-body text-justify" style="min-height: 50vh;padding-right: 50px;">
+                            <h1 class="text-center text-primary" style="margin-bottom: 50px;margin-top: 30px;"><%=tintuc.ten%></h1>
+                            <h5 class="text-justify text-info" style="margin-bottom: 50px;margin-top: 30px;"><strong><%=tintuc.tomtat%></strong></h5>
+                            <div id="noidunghtml" style="display: none;">
+                                <%=tintuc.noidung%>
+                            </div>
+                            <div id="noidung">
+                                
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <em> Chia sẻ : </em>
+                            <button class="btn btn-primary"><span class="fa fa-facebook"> Facebook </span></button>
+                            <button class="btn btn-info"><span class="fa fa-twitter"> Twitter </span></button>
+                            </button>
+                            <em> Ghim : </em>
+                            <button class="btn btn-danger"><span class="fa fa-pinterest-p"> Pinterest </span></button>
+                            <div style="float: right;">
+                            	<a href="/tintuc/xem/<%=parseInt(tintuc.id)-1%>" title="Bài cũ"><button class="btn"><span class="glyphicon glyphicon-triangle-left"></span></button></a>
+                            	<a href="/tintuc/xem/<%=parseInt(tintuc.id)+1%>" title="Bài mới"><button class="btn"><span class="glyphicon glyphicon-triangle-right"></span></button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">Thông tin bài viết</h4>
+                        </div>
+                        <div class="panel-body">
+                            <span class="glyphicon glyphicon-eye-open"></span> :
+                            <span id="postView"><%= tintuc.luotxem %></span>
+                            <br/>
+                            <span class="glyphicon glyphicon-time"></span> :
+                            <span id="postDate"><%= tintuc.ngaydang %></span>
+                            <br/>
+                            <span class="glyphicon glyphicon-tag"></span> :
+                            <span id="postTag">tag1, tag2</span>
+                        </div>
+                        <div class="panel-footer">
+                            <img src="/images/<%=tintuc.urlanh%>" width="100%">
+                            <div class="googleCalendar">
+                                <iframe src="https://calendar.google.com/calendar/embed?title=SOICT%20CALENDAR&amp;showCalendars=0&amp;height=100&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=8d3fc8l9g04n7r9im45fsn08ak%40group.calendar.google.com&amp;color=%238D6F47&amp;ctz=Asia/Saigon" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="div_my_footer" class="container">
+            <%include ../trangchu/footer%>
+        </div>
+    </body>
+    <script src="/javascripts/tintuc/xemtin.js" type="text/javascript" charset="utf-8" async defer></script>
+<%}else{%>
+Không tồn tại bài viết 
+<%}%>

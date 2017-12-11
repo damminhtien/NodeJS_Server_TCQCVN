@@ -1,0 +1,209 @@
+@charset "utf-8";
+/* CSS Document */
+
+/**************  Định dạng chung cho toan bo van ban ******************/
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.clr{
+	clear:both;
+}
+
+
+
+body{
+	font-size:13px;
+	
+}
+
+/*************** Định dang cho phần hiển thị chính **********************/
+
+.main{
+	width:960px;
+	margin: 0 auto;
+}
+
+/*************** Định dang cho phần Header **********************************
+  Header gom 3 phan
+   - Logo                     : Dinh dang truc tiep
+   - MainMenu                 : Dinh dang trong phan Menubar.css
+   - MenuBar                  :
+---------------------------------------------------------------------------*/  
+.Header{
+	clear:both;
+	height:auto;
+}   
+/*****************************************************************************/
+
+/************************ Định dang cho phần Content *************************/
+.Content{
+	clear:both;
+	width:960px;
+	height:760px;
+	color:blue;
+/*	background-color:#F0F0F0;*/
+	margin-top:2px;
+}
+.LeftPanel{
+	width:720px;
+	height:760px;
+
+	/*background-color:#E0E0E0;*/
+	margin:10px 5px 5px 0px;
+	float:left;
+}
+
+.HotNews{
+	width:400px;
+	height:280px;
+	border-style:groove;
+	border-width:thin;	
+	margin-bottom:10px;
+	float:left;
+}
+
+.LastNews{
+	width: 300px;
+	height: 280px;
+	margin-bottom:10px;
+	border-style:groove;
+	border-width:thin;
+	float:right;
+}
+
+.Notice{
+	clear:both;
+	width:720px;
+	height:460px;
+	border-style:groove;
+	border-width:thin;	
+	margin-bottom:10px;
+}
+
+.NoticeTitle{
+	width:720px;
+	height:24px;
+	background-color:#0033CC;
+	font:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:white; 
+	text-align:left;
+	padding: 8px 0 0 0;
+}
+
+.RightPanel{
+	width:230px;
+	height:720px;
+/*	background-color:#E0E0E0;*/
+	margin:10px 0px 5px 5px;
+	float:right;
+}
+
+.NewNotice{
+	width:230px;
+	height:240px;
+	border-style:groove;
+	border-width:thin;
+	overflow:hidden;
+}
+
+.NewNoticeTitle{
+	width:230px;
+	height:24px;
+	background-color:#0033CC;
+	font:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:white; 
+	text-align:left;
+	padding: 8px 10px 0 0;
+}
+
+.NewStandard{
+	width:230px;
+	height:300px;
+	border-style:groove;
+	border-width:thin;
+	overflow:hidden;
+	margin:5px 0 0 0;
+
+}
+
+.NewStandardTitle{
+	width:230px;
+	height:24px;
+	background-color:#0033CC;
+	font:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:white; 
+	text-align:left;
+	padding: 8px 0 0 0;
+}
+
+.NewStandardMenu{
+	width:230px;
+	height:24px;
+	background-color:#CCCCCC;
+	font-size:14px;
+	color:black;
+	text-align:left;
+		display:block;
+/*	padding: 8px 0 0 0*/
+}
+
+.NewStandardMenu ul{
+	list-style:none;
+	text-decoration:none;
+}
+
+.NewStandardMenu li{
+	display:inline-block;
+	padding-left:10px;
+}
+
+
+.Link{
+	width:230px;
+	height:100px;
+	margin:5px 0 0 0
+	/*background-color:#D0D0E0;*/
+	/*margin:5px 5px 5px 5px;*/
+}
+
+.Statistics{
+	width:230px;
+	height:80px;
+	border-style: ridge;
+	border-width:medium;
+	background-color:#DDDDDD;
+	padding-left: 5px;
+	/*margin:5px 5px 5px 5px;*/
+}
+
+.TitleMenu{
+	background: url(../images/menu_title_bg.gif);
+	background-size:236px;
+	height: 30px;
+	width: 236px;
+	font-size: 16px;
+	color: #FFFFFF;
+	text-align: center;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	vertical-align: top;
+	padding-top:6px;
+	margin-bottom:-4px;
+}
+
+.NewsTitle{
+	background-image: url(../images/bg_right_muti_category.png);
+	background-repeat: no-repeat;
+	background-size: 400px;
+	height: 30px;
+	font-size: 14px;
+	color: #blue;
+	vertical-align: middle;
+}
+/*************** Het phan dịnh dang cho phần Content **********************/
+/**************************************************************************/
