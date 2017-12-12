@@ -33,7 +33,7 @@ app.use(cookieParser());
 app.use(flash());
 app.use(passport.session());
 
-router.get('/hethongtieuchuanquychuan', (req, res) => {
+router.get('/hethongquychuantieuchuan', (req, res) => {
     pool.connect((err, client, release) => {
         if (err) {
             return console.error('Error acquiring client', err.stack);
@@ -49,7 +49,7 @@ router.get('/hethongtieuchuanquychuan', (req, res) => {
     })
 });
 
-router.get('/tieuchuanquychuannuocngoai', (req, res) => {
+router.get('/quychuantieuchuannuocngoai', (req, res) => {
     pool.connect((err, client, release) => {
         if (err) {
             return console.error('Error acquiring client', err.stack);
@@ -88,8 +88,6 @@ router.get('/sua',(req,res)=>{
 router.post('/sua',(req,res)=>{
 	var id = req.body.id,
 		chude = req.body.chude;
-		console.log(id);
-		console.log(chude);
 	pool.connect((err, client, release) => {
         if (err) {
             return console.error('Error acquiring client', err.stack);

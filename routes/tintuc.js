@@ -154,4 +154,38 @@ router.get("/laythongtin/id=:id", (req, res) => {
     })
 })
 
+router.get("/get5maxngaydang", (req, res) => {
+    var id = req.params.id;
+    pool.connect((err, client, release) => {
+        if (err) {
+            return console.error('Error acquiring client', err.stack);
+        }
+        client.query("SELECT id,ten,tomtat,urlanh,ngaydang FROM tintuc ORDER BY ngaydang DESC LIMIT 5", (err, result) => {
+            release();
+            if (err) {
+                res.end();
+                return console.error('Error executing query', err.stack)
+            }
+            res.send(result.rows);
+        })
+    })
+})
+
+router.get("/get5maxluotxem", (req, res) => {
+    var id = req.params.id;
+    pool.connect((err, client, release) => {
+        if (err) {
+            return console.error('Error acquiring client', err.stack);
+        }
+        client.query("SELECT id,ten,tomtat,urlanh,luotxem FROM tintuc ORDER BY luotxem DESC LIMIT 5", (err, result) => {
+            release();
+            if (err) {
+                res.end();
+                return console.error('Error executing query', err.stack)
+            }
+            res.send(result.rows);
+        })
+    })
+})
+
 module.exports = router;

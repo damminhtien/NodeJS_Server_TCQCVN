@@ -55,7 +55,7 @@ body{
 	float:left;
 }
 
-.HotNews{
+.LastNews0{
 	width:400px;
 	height:280px;
 	border-style:groove;
@@ -64,7 +64,7 @@ body{
 	float:left;
 }
 
-.LastNews{
+.LastNews1{
 	width: 300px;
 	height: 280px;
 	margin-bottom:10px;

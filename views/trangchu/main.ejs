@@ -12,7 +12,7 @@
             <div class="Content">
                 <div class="LeftPanel">
                     <!-- Tin tuc su kien -->
-                    <div class="HotNews" style="background-color:#dedede; background-size:400px 280px; ">
+                    <div class="LastNews0" style="background-color:#dedede; background-size:400px 280px; ">
                         <div class="container-slide">
                             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                                 <ol class="carousel-indicators">
@@ -24,25 +24,15 @@
                                 </ol>
                                 <div class="carousel-inner">
                                     <div class="item active">
-                                        <img src="images/trangchu/bg-01.jpg" alt="Los Angeles" style="width:400px; height:220px">
-                                        <h6 class="title"><a href="#">Ngày 3/11/2017 tại Trụ sở cơ quan Bộ Xây dựng đã diễn ra Lễ ký kết thỏa thuận hợp tác“Vì lợi ích đoàn viên công đoàn”</a></h6>
+                                        <img src="images/default12345zxc.png" style="width:400px; height:220px" id="imgSlide0">
+                                        <h6 class="title" id="h6Slide0"><a href="#" id="aSlide0"></a></h6>
                                     </div>
+                                    <% for (var i = 1; i < 5; i++) { -%>
                                     <div class="item">
-                                        <img src="images/trangchu/bg-02.jpg" alt="Chicago" style="width:400px; height:220px">
-                                        <h6 class="title"><a href="#">Ngày 3/11/2017 tại Trụ sở cơ quan Bộ Xây dựng đã diễn ra Lễ ký kết thỏa thuận hợp tác“Vì lợi ích đoàn viên công đoàn”</a></h6>
-                                    </div>
-                                    <div class="item">
-                                        <img src="images/trangchu/bg-03.jpg" alt="New york" style="width:400px; height:220px">
-                                        <h6 class="title"><a href="#">Ngày 3/11/2017 tại Trụ sở cơ quan Bộ Xây dựng đã diễn ra Lễ ký kết thỏa thuận hợp tác“Vì lợi ích đoàn viên công đoàn”</a></h6>
-                                    </div>
-                                    <div class="item">
-                                        <img src="images/trangchu/bg-04.jpg" alt="Ha Noi" style="width:400px; height:220px">
-                                        <h6 class="title"><a href="#">Ngày 3/11/2017 tại Trụ sở cơ quan Bộ Xây dựng đã diễn ra Lễ ký kết thỏa thuận hợp tác“Vì lợi ích đoàn viên công đoàn”</a></h6>
-                                    </div>
-                                    <div class="item">
-                                        <img src="images/trangchu/bg-05.jpg" alt="Tp.HCM" style="width:400px; height:220px">
-                                        <h6 class="title"><a href="#">Ngày 3/11/2017 tại Trụ sở cơ quan Bộ Xây dựng đã diễn ra Lễ ký kết thỏa thuận hợp tác“Vì lợi ích đoàn viên công đoàn”</a></h6>
-                                    </div>
+                                        <img src="images/default12345zxc.png" style="width:400px; height:220px" id="imgSlide<%=i%>">
+                                        <h6 class="title" id="h6Slide<%=i%>"><a href="#" id="aSlide<%=i%>"></a></h6>
+                                    </div>    
+                                    <% } -%>
                                 </div>
                                 <!-- Left and right controls -->
                                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -56,33 +46,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="LastNews" id="scroll_box">
+                    <div class="LastNews1" id="scroll_box">
                         <p>
+                            <% for (var i = 0; i < 5; i++) { -%>
                             <div style="width:300px;height:50px; margin-bottom:5px;">
-                                <p>
-                                    <img src="images/trangchu/VanCanh.jpg" style="float:left;width:70px;height:50px; margin-right:10px; borderstyle:groove;border-width:thin;"> Hà Nội điều chỉnh tổng thể Quy hoạch chi tiết Khu đô thị Vân Canh
+                                <p id="tomtat<%=i%>">
+                                    Hà Nội điều chỉnh tổng thể Quy hoạch chi tiết Khu đô thị Vân Canh
                                 </p>
-                            </div>
-                            <div style="width:300px;height:50px; margin-bottom:5px;">
-                                <p>
-                                    <img src="images/trangchu/HopBao.jpg" style="float:left;width:70px;height:50px; margin-right:10px;"> Bộ Xây dựng tổ chức Họp báo Quý II/2017
-                                </p>
-                            </div>
-                            <div style="width:300px;height:50px; margin-bottom:5px;">
-                                <p>
-                                    <img src="images/trangchu/GiaoVien.jpg" style="float:left;width:70px;height:50px; margin-right:10px;"> Khai mạc Hội giảng Giáo viên, giảng viên các cơ sở giáo dục nghề nghiệp Bộ Xây dựng năm 2017
-                                </p>
-                            </div>
-                            <div style="width:300px;height:50px; margin-bottom:5px;">
-                                <p>
-                                    <img src="images/trangchu/VanCanh.jpg" style="float:left;width:70px;height:50px; margin-right:10px;"> Hà Nội điều chỉnh tổng thể Quy hoạch chi tiết Khu đô thị Vân Canh
-                                </p>
-                            </div>
-                            <div style="width:300px;height:50px;margin-bottom:5px;">
-                                <p>
-                                    <img src="images/trangchu/HopBao.jpg" style="float:left;width:70px;height:50px; margin-right:10px;"> Bộ Xây dựng tổ chức Họp báo Quý II/2017
-                                </p>
-                            </div>
+                            </div>    
+                            <% } -%>
                         </p>
                     </div>
                     <!-- Thoong tin khoa hocj -->
@@ -174,6 +146,7 @@
             </div>
         </div>
         <%include footer%>
+        <script src="/javascripts/trangchu/trangchu.js" type="text/javascript" charset="utf-8"></script>
     </body>
 
     </html>
