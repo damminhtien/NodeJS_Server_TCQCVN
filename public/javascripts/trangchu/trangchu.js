@@ -1,4 +1,4 @@
-$(document).ready(() => {
+$("document").ready(() => {
     (async function() {
         $.ajax({
             url: "tintuc/get5maxngaydang",

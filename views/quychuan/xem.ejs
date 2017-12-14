@@ -1,0 +1,42 @@
+<%include ../header%>
+    </head>
+
+    <body>
+        <%include ../top%>
+        <h1>Quy chuẩn <%=bonganh%></h1>
+        <div class="container table-responsive">
+            <table class='table table-bordered table-striped'>
+                <thead>
+                    <tr>
+                        <th>Tên quy chuẩn</th>
+                        <th>Quyết định số</th>
+                        <th>Ký hiệu số</th>
+                        <th>Ngày ban hành</th>
+                        <th>Lĩnh vực</th>
+                        <th>Xem</th>
+                        <th>Ghi chú</th>
+                        <th>Lượt xem</th>
+                        <th>Lượt tải</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (var i = 0; i < quychuan.length; i++) { -%>
+                        <tr>
+                            <td><%=quychuan[i].ten%></td>
+                            <td><%=quychuan[i].quyetdinhso%></td>
+                            <td><%=quychuan[i].kyhieuso%></td>
+                            <td><%=quychuan[i].ngaybanhanh%></td>
+                            <td><%=quychuan[i].linhvuc%></td>
+                            <td><%=quychuan[i].duongdan%></td>
+                            <td><%=quychuan[i].ghichu%></td>
+                            <td><%quychuan[i].luotxem%></td>
+                            <td><%quychuan[i].luottai%></td>
+                        </tr>    
+                    <% } -%>
+                </tbody>
+            </table> 
+        </div>
+           
+        <%include ../trangchu/footer%>
+    </body>
+    </html>

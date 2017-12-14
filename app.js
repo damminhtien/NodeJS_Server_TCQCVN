@@ -7,7 +7,6 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var session = require('express-session');
 var flash = require('connect-flash-plus');
-var fs = require('fs');
 var multer = require('multer');
 app.use(session({
     secret: 'keyboard cat',
@@ -43,10 +42,14 @@ app.use(bodyParser.json());
 var index = require('./routes/index');
 var tintuc = require('./routes/tintuc');
 var gioithieu = require('./routes/gioithieu');
+var quychuan = require('./routes/quychuan');
+var admin = require('./routes/admin');
 
 app.use('/', index);
 app.use('/tintuc', tintuc);
 app.use('/gioithieu', gioithieu);
+app.use('/quychuan', quychuan);
+app.use('/admin', admin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
