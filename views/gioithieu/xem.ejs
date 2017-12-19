@@ -1,15 +1,18 @@
 <%include ../header%>
+<link rel="stylesheet" href="/stylesheets/top.css">
     </head>
 
     <body>
-        <%include ../top%>
+        <div class="main">
+            <%include ../top%>
             <h1><%=gioithieu.ten%></h1>
             <div id="noidunghtml" style="display: none;">
                 <%=gioithieu.chude%>
             </div>
             <div id="noidung">
             </div>
-            <%include ../trangchu/footer%>
-            <script src="/javascripts/tintuc/xemtin.js" type="text/javascript" charset="utf-8" async defer></script>
+            <%include ../footer%>    
+        </div>
+        <script src="/javascripts/tintuc/xemtin.js" type="text/javascript" charset="utf-8" async defer></script>
     </body>
     </html>

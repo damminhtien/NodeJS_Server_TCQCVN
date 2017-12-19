@@ -1,0 +1,67 @@
+<%include ../header%>
+<link rel="stylesheet" href="/stylesheets/top.css">
+</head>
+<body>
+	<div class="main">
+		<%include ../top%>
+		<form method="post" accept-charset="utf-8" enctype="multipart/form-data" class="form-horizontal">
+                <input type="hidden" name="idquantridang" value="<%=usr.user.id%>">
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Tên :</label>
+                    <div class="col-sm-10">
+                    	<input type="text" class="form-control" name="ten" placeholder="Nhập tên..." value="<%=quychuan.ten%>">	
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Quyết định số :</label>
+                    <div class="col-sm-10">
+                    	<input type="text" class="form-control" name="quyetdinhso" placeholder="Nhập quyết định số" value="<%=quychuan.quyetdinhso%>">	
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Ký hiệu số :</label>
+                    <div class="col-sm-10">
+                    	<input type="text" class="form-control" name="kyhieuso" placeholder="Nhập ký hiệu số" value="<%=quychuan.kyhieuso%>">	
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Lĩnh vực :</label>
+                    <div class="col-sm-10">
+                    	<input type="text" class="form-control" name="linhvuc" placeholder="Nhập lĩnh vực" value="<%=quychuan.linhvuc%>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Bộ ngành :</label>
+                    <div class="col-sm-10">
+                    	<select name="idbonganh" class="form-control" id="bonganhSelect" value="<%=quychuan.idbonganh%>">
+                            <option value="1">Bộ xây dựng</option>
+                            <option value="2">Bộ khoa học và công nghệ</option>
+                            <option value="3">Bộ nông nghiệp</option>
+                            <option value="4">Bộ công thương</option>
+                            <option value="5">Bộ tài nguyên và môi trường</option>
+                            <option value="6">Bộ giao thông vận tải</option>
+                        </select>	
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Ghi chú:</label>
+                    <div class="col-sm-10">
+                    	<textarea name="ghichu" rows="5" placeholder="Nhập ghi chú ..." class="form-control" value="<%=quychuan.ghichu%>"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Ngày ban hành :</label>
+                    <div class="col-sm-10">
+                    	<input id="date" type="date" class="form-control" name="ngaybanhanh" value="<%=quychuan.ngaybanhanh%>">
+                    </div>
+                </div>
+                <div class="form-group">
+                	<div class="col-sm-offset-2 col-sm-10">
+                		<button type="submit" class="btn btn-success" id="btnSubmit">Sửa quy chuẩn</button>	
+                	</div>
+                </div>
+		</form>
+		<%include ../footer%>
+		<script src="/javascripts/quychuan/sua.js" type="text/javascript" charset="utf-8"></script>
+	</div>	
+</body>

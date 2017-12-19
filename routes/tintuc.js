@@ -56,6 +56,22 @@ router.get('/xem/:id', (req, res) => {
     })
 });
 
+router.get('/xemtin', (req, res) => {
+    pool.connect((err, client, release) => {
+        if (err) {
+            return console.error('Error acquiring client', err.stack);
+        }
+        client.query("SELECT * from tintuc", (err, result) => {
+            release();
+            if (err) {
+                res.end();
+                return console.error('Error executing query', err.stack)
+            }
+            res.render('tintuc/xem', { data: result.rows, usr: req._passport.session });
+        })
+    })
+})
+
 router.get('/viet/byid=:id', (req, res) => {
     res.render('tintuc/viettin', { usr: req._passport.session });
 })
@@ -94,8 +110,21 @@ router.post('/viet/byid=:id', uploadAnh.single('ava'), (req, res) => {
     })
 })
 
-router.get('/sua', (req, res) => {
-    res.render('tintuc/suatin');
+router.get('/sua/:id', (req, res) => {
+    var id = req.params.id;
+    pool.connect((err, client, release) => {
+        if (err) {
+            return console.error('Error acquiring client', err.stack);
+        }
+        client.query('SELECT * FROM tintuc WHERE id = '+id, (err, result) => {
+            release();
+            if (err) {
+                res.end();
+                return console.error('Error executing query', err.stack)
+            }
+            res.render("tintuc/sua",{usr: req._passport.session, tintuc: result.rows[0]});
+        })
+    })
 })
 
 router.post('/sua', uploadAnh.single('ava'), (req, res) => {
@@ -154,13 +183,13 @@ router.get("/laythongtin/id=:id", (req, res) => {
     })
 })
 
-router.get("/get5maxngaydang", (req, res) => {
+router.get("/get8maxngaydang/:id", (req, res) => {
     var id = req.params.id;
     pool.connect((err, client, release) => {
         if (err) {
             return console.error('Error acquiring client', err.stack);
         }
-        client.query("SELECT id,ten,tomtat,urlanh,ngaydang FROM tintuc ORDER BY ngaydang DESC LIMIT 5", (err, result) => {
+        client.query("SELECT id,ten,tomtat,urlanh,ngaydang FROM tintuc ORDER BY ngaydang DESC OFFSET "+req.params.id*8+" LIMIT 8", (err, result) => {
             release();
             if (err) {
                 res.end();

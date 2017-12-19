@@ -1,0 +1,37 @@
+#menu_doc ul{
+	list-style: none;
+}
+
+#menu_doc ul li{
+	position: relative;
+}
+.sign{
+	position: absolute;
+	top : 5px;
+	right : 5px;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+}
+#menu_doc ul li a{
+	text-decoration: none;
+	background-color: rgb(30,96,140);
+	display: inline-block;
+	width: 250px;
+	border-bottom: 1px solid white;
+	color : #dedede;
+	padding : 8px;
+	font-weight: bold;
+}
+
+#menu_doc ul li ul.child{
+	display: none;
+}
+
+#menu_doc ul li ul.child li a{
+	padding-left: 20px;
+	background-color: gray;
+	color: white;
+	width: 235px;
+	margin-left: 6.5px;
+}

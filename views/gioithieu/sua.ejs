@@ -1,12 +1,14 @@
 <%include ../header%>
+    <link rel="stylesheet" href="/stylesheets/top.css">
     <script src='/javascripts/tinymce/js/tinymce/tinymce.min.js'></script>
     <script src='/javascripts/tinymce/js/tinymce/jquery.tinymce.min.js'></script>
     <script src="/javascripts/gioithieu/sua.js" type="text/javascript" charset="utf-8" async defer></script>
 </head>
     <body>
-        <%include ../top%>
+        <div class="main">
+            <%include ../top%>
         <form method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded" class="form-horizontal">
-        	<div class="form-group">
+            <div class="form-group">
                 <label class="control-label col-sm-2 alert-success">Mục :</label>
                 <div class="col-sm-10">
                     <select name="id" class="form-control" id="gioithieuId">
@@ -28,6 +30,7 @@
                 </div>
             </div>
         </form>
-        <%include ../trangchu/footer%>
+        <%include ../footer%>    
+        </div>
     </body>
     </html>

@@ -82,7 +82,7 @@ router.get('/huongdansudung', (req, res) => {
 });
 
 router.get('/sua',(req,res)=>{
-	res.render('gioithieu/sua');
+	res.render('gioithieu/sua',{usr: req._passport.session});
 })
 
 router.post('/sua',(req,res)=>{

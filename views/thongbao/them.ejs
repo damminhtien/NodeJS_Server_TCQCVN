@@ -1,0 +1,32 @@
+<%include ../header%>
+    <link rel="stylesheet" href="/stylesheets/top.css">
+    <script src='/javascripts/tinymce/js/tinymce/tinymce.min.js'></script>
+    <script src='/javascripts/tinymce/js/tinymce/jquery.tinymce.min.js'></script>
+    <script src="/javascripts/gioithieu/sua.js" type="text/javascript" charset="utf-8" async defer></script>
+</head>
+    <body>
+        <div class="main">
+            <%include ../top%>
+        <form method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded" class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-sm-2 alert-success">Tên :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="ten" placeholder="Nhập tên...">  
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Nội dung:</label>
+                <div class="col-sm-10">
+                    <textarea id="mytextarea" name="noidung" placeholder="Nội dung chinh..." class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-success" class="form-control">Thêm thông báo</button>
+                </div>
+            </div>
+        </form>
+        <%include ../footer%>    
+        </div>
+    </body>
+    </html>

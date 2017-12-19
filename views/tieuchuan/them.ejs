@@ -1,0 +1,94 @@
+<%include ../header%>
+<link rel="stylesheet" href="/stylesheets/top.css">
+</head>
+<body>
+	<div class="main">
+		<form method="post" accept-charset="utf-8" enctype="multipart/form-data" class="form-horizontal">
+                <input type="hidden" name="idquantridang" value="<%=usr.user.id%>">
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Tên :</label>
+                    <div class="col-sm-10">
+                    	<input type="text" class="form-control" name="ten" placeholder="Nhập tên...">	
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Quyết định số :</label>
+                    <div class="col-sm-10">
+                    	<input type="text" class="form-control" name="quyetdinhso" placeholder="Nhập quyết định số">	
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Ký hiệu số :</label>
+                    <div class="col-sm-10">
+                    	<input type="text" class="form-control" name="kyhieuso" placeholder="Nhập ký hiệu số">	
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Lĩnh vực :</label>
+                    <div class="col-sm-10">
+                    	<input type="text" class="form-control" name="linhvuc" placeholder="Nhập lĩnh vực">	
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Tiêu chí chính :</label>
+                    <div class="col-sm-10">
+                    	<select name="idctt" class="form-control" id="idcttSelect">
+                            <option value="1">Nhà ở và công trình công cộng</option>
+                            <option value="2">Quy hoạch kiến trúc</option>
+                            <option value="3">Khảo sát đo đạc</option>
+                            <option value="4">Kết cấu xây dựng</option>
+                            <option value="5">Vật liệu xây dựng</option>
+                            <option value="6">Công nghệ xây dựng</option>
+                        </select>	
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Tiêu chí phụ :</label>
+                    <div class="col-sm-10">
+                        <select name="idct" class="form-control" id="idctSelect">
+                            <option value="1">Yêu cầu chung</option>
+                            <option value="2">Tiêu chuẩn về nhà ở</option>
+                            <option value="3">Công trình công cộng</option>
+                            <option value="4">Hệ thống kỹ thuật trong nhà và công trình</option>
+                        </select>   
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Loại tiêu chuẩn :</label>
+                    <div class="col-sm-10">
+                        <select name="loai" class="form-control" id="loaiSelect">
+                            <option value="1">Tiêu chuẩn thường</option>
+                            <option value="2">Tiêu chuẩn cơ sở</option>
+                            <option value="3">Tiêu chuẩn nhà nước</option>
+                        </select>   
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Ghi chú :</label>
+                    <div class="col-sm-10">
+                    	<textarea name="ghichu" rows="5" placeholder="Nhập ghi chú ..." class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Ngày ban hành :</label>
+                    <div class="col-sm-10">
+                    	<input id="date" type="date" class="form-control" name="ngaybanhanh">
+                    </div>
+                </div>
+                <div class="form-group">
+                	<label class="control-label col-sm-2">Tải tệp lên :</label>
+                	<div class="col-sm-10">
+						<input type="file" name="file" placeholder="Tải tệp lên" class="form-control" accept=".pdf">
+                	</div>
+                </div>
+                <div class="form-group">
+                	<div class="col-sm-offset-2 col-sm-10">
+                		<button type="submit" class="btn btn-success" disabled id="btnSubmit">Thêm quy chuẩn</button>	
+                	</div>
+                </div>
+		</form>
+		<%include ../footer%>
+		<script src="/javascripts/quychuan/them.js" type="text/javascript" charset="utf-8"></script>
+	</div>	
+    <script src="/javascripts/tieuchuan/them.js" type="text/javascript" charset="utf-8" async defer></script>
+</body>

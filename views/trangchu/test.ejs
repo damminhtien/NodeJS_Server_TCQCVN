@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="Shortcut Icon" href="images/trangchu/105720q5xxhcnnqtztnsbs.png">
+    <title>Tiêu chuẩn và quy chuẩn ngành xây dựng</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/test/style.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/test/menubar.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <img src="images/trangchu/banner_TCQC.png" width="960" height="118" style="margin-bottom:1px;" />
+        <%include menubar%>
+        <%include secondMenu%>
+        <div class="Content">
+            <%include tracuu%>
+            <div class="LeftPanel">
+                <!-- slide + tóm tắt -->
+                </br>
+                <%include slide%>
+                <!-- tin mới -->
+                <%include tinmoi%>
+            </div>
+            <div class="RightPanel">
+                <!-- Thông báo mới -->
+                <div class="NewNotice" id="scroll_box" style="width:225px">
+                    <div class="NewNoticeTitle" style="height: 36px; width: 100%;"  >
+                        <p style="padding-left:10px;" >Thông báo</p>
+                    </div>
+                    <marquee direction="up" scrollamount="2" onmouseover="this.stop()" onmouseout="this.start()">
+                        <ul style="list-style-type: square; margin-left:20px;">
+                            <% for (var i = 0; i < 5; i++) { -%>
+                                <li style="padding-bottom:5px;" >
+                                    <a href="id="thongbao<%=i%>" style="text-decoration: none;" class="text-justify">Thông báo lựa chọn nhà đầu tư chiến lược đối với Công ty mẹ - Tổng công ty Đầu tư phát triển đô thị và khu công nghiệp Việt Nam (IDICO) khi cổ phần hóa</a>
+                                </li>
+                            <% } -%>
+                        </ul>
+                    </marquee>
+                </div>
+                <!-- Tieeu chuan quy chuan moi ban hanh -->
+                <div class="NewStandard" style="margin-top: 14px;">
+                    <div class="NewStandardTitle" style="height: 36px; width: 100%;">
+                        <p style="padding-left:10px;">Quy chuẩn-Tiêu chuẩn mới</p>
+                    </div>
+                    <marquee direction="up" scrollamount="2" onmouseover="this.stop()" onmouseout="this.start()">
+                        <ul style="list-style-type: square; margin-left:20px;">
+                            <li style="padding-bottom:5px;">
+                                <a href="#">Quy chuẩn kỹ thuật quốc gia về nguyên tắc phân loại, phân cấp công trình dân dụng, công nghiệp và hạ tầng kỹ thuật đô thị</a>
+                            </li>
+                            <li style="padding-bottom:5px;">
+                                <a href="#">Quy chuẩn kỹ thuật quốc gia về các công trình xây dựng sử dụng năng lượng hiệu quả</a>
+                            </li>
+                            <li style="padding-bottom:5px;">
+                                <a href="#">Quy chuẩn kỹ thuật quốc gia về xây dựng và lắp đặt phương tiện quảng cáo ngoài trời</a>
+                            </li>
+                            <li style="padding-bottom:5px;">
+                                <a href="#">Phòng cháy - Dấu hiệu an toàn</a>
+                            </li>
+                            <li style="padding-bottom:5px;">
+                                <a href="#">Thiết bị phòng cháy và chữa cháy.Ký hiệu hình vẽ dùng trên sơ đồ phòng cháy.Yêu cầu kĩ thuật</a>
+                            </li>
+                        </ul>
+                    </marquee>
+                </div>
+                <div class="Link">
+                    <div class="TitleMenu">Liên kết ngoài</div>
+                    <form id="form1" name="form1" method="post" action="">
+                        <label for="select"></label>
+                        <select name="select" size="1" id="select" style="width:236px; height:32px; font-size:14px; " onchange="location=this.value;">
+                            <option value="">------Tổ chức trong nước -------</option>
+                            <option value=http://moc.gov.vn>Bộ Xây dựng </option>
+                            <option value=http://most.gov.vn>Bộ Khoa học và công nghệ</option>
+                            <option value=http://www.moit.gov.vn/>Bộ Công thương</option>
+                            <option value=https://www.mard.gov.vn/Pages/default.aspx>Bộ nông nghiệp và phát triển nông thôn</option>
+                            <option value=http://mt.gov.vn/vn/Pages/Trangchu.aspx>Bộ Giao thông vận tải</option>
+                        </select>
+                    </form>
+                    <form id="form2" name="form2" method="post" action="">
+                        <label for="select"></label>
+                        <select name="select" size="1" id="select" style="width:236px; height:32px; font-size:14px; " onchange="location=this.value;">
+                            <option value="">------Tổ chức Quốc tế -------</option>
+                            <option value=http://iaea.org>IAEA </option>
+                            <option value=http://www.un.org/en/index.html>Liên Hợp Quốc</option>
+                            <option value=http://asean.mofa.gov.vn/>Asean</option>
+                            <option value=https://europa.eu/european-union/index_en>Liên Minh Châu Âu</option>
+                        </select>
+                    </form>
+                </div>
+                </br>
+                </br>
+                <div class="Statistics">
+                    <h3> Lượt truy cập: 10</h3>
+                    <br>
+                    <h3>Đang trực tuyến: 20</h3>
+                </div>
+            </div>
+        </div>
+        </br></br></br></br></br></br></br></br></br></br></br>
+        <div id="space" style="display:none"></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></div>
+        <%include ../footer%>
+    </div>
+    <script src="/javascripts/trangchu/trangchu.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

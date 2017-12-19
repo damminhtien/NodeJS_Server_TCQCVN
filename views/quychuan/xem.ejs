@@ -1,41 +1,44 @@
 <%include ../header%>
+<link rel="stylesheet" href="/stylesheets/top.css">
     </head>
 
     <body>
-        <%include ../top%>
+        <div class="main">
+            <%include ../top%>
         <h1>Quy chuẩn <%=bonganh%></h1>
-        <div class="container table-responsive">
-            <table class='table table-bordered table-striped'>
-                <thead>
-                    <tr>
-                        <th>Tên quy chuẩn</th>
-                        <th>Quyết định số</th>
-                        <th>Ký hiệu số</th>
-                        <th>Ngày ban hành</th>
-                        <th>Lĩnh vực</th>
-                        <th>Xem</th>
-                        <th>Ghi chú</th>
-                        <th>Lượt xem</th>
-                        <th>Lượt tải</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% for (var i = 0; i < quychuan.length; i++) { -%>
-                        <tr>
-                            <td><%=quychuan[i].ten%></td>
-                            <td><%=quychuan[i].quyetdinhso%></td>
-                            <td><%=quychuan[i].kyhieuso%></td>
-                            <td><%=quychuan[i].ngaybanhanh%></td>
-                            <td><%=quychuan[i].linhvuc%></td>
-                            <td><%=quychuan[i].duongdan%></td>
-                            <td><%=quychuan[i].ghichu%></td>
-                            <td><%quychuan[i].luotxem%></td>
-                        </tr>    
-                    <% } -%>
-                </tbody>
-            </table> 
+        <div class="container table-responsive" style="width: 960px">
+                    <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+        <thead>
+            <tr>
+                <th>Tên</th>
+                <th>Quyết định số</th>
+                <th>Ký hiệu số</th>
+                <th>Ngày ban hành</th>
+                <th>Lĩnh vực</th>
+                <th>Xem</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (var i = 0; i < quychuan.length; i++) { -%>
+                <tr>
+                    <td><%=quychuan[i].ten%></td>
+                    <td><%=quychuan[i].quyetdinhso%></td>
+                    <td><%=quychuan[i].kyhieuso%></td>
+                    <td><%=quychuan[i].ngaybanhanh%></td>
+                    <td><%=quychuan[i].linhvuc%></td>
+                    <td><a href="/quychuan/xem/<%=quychuan[i].id%>" title="Xem">Xem</a></td>
+                </tr>
+            <% } -%>
+        </tbody>
+    </table>
+   
         </div>
            
-        <%include ../trangchu/footer%>
+        <%include ../footer%>    
+        </div>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="/javascripts/admin/jquery.dataTables.min.js"></script>
+    <script src="/javascripts/admin/dataTables.bootstrap.js"></script>
+    <script src="/javascripts/admin/tables.js"></script>
     </body>
     </html>

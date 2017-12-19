@@ -1,0 +1,33 @@
+<%include ../header%>
+<link rel="stylesheet" href="/stylesheets/top.css">
+</head>
+<body>
+	<div class="main">
+		<form method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded " class="form-horizontal" autocomplete="off">
+                <input type="hidden" name="idquantridang" value="<%=usr.user.id%>">
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Tên đầy đủ:</label>
+                    <div class="col-sm-10">
+                    	<input type="text" class="form-control" name="tendaydu" placeholder="Nhập tên..." autocomplete="off" >	
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Tên đăng nhập :</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="tendangnhap" placeholder="Nhập tên đăng nhập..." autocomplete="off">   
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Mật khẩu :</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" name="matkhau" placeholder="Nhập mật khẩu..." autocomplete="off">   
+                    </div>
+                </div>
+                <div class="form-group">
+                	<div class="col-sm-offset-2 col-sm-10">
+                		<button type="submit" class="btn btn-success" id="btnSubmit">Thêm</button>	
+                	</div>
+                </div>
+		</form>
+	</div>	
+</body>

@@ -1,43 +1,19 @@
-<div class ="SecondMenu">
-     <ul>
-      <li style="float:left; "><img src="/images/trangchu/lich.gif" width="18" height="18" style="padding-left:6px; padding-right:2px"/> </li>
-      <li style="float:left; "> <p style="font-size:14px; padding-top:2px;"> 
-	    <!--     <script> document.write(new Date().toDateString()); </script>  -->
-			  <?php 
-          function sw_get_current_weekday() {
-            date_default_timezone_set('Asia/Ho_Chi_Minh');
-            $weekday = date("l");
-            $weekday = strtolower($weekday);
-            switch($weekday) {
-                case 'monday':
-                    $weekday = 'Thứ hai';
-                    break;
-                case 'tuesday':
-                    $weekday = 'Thứ ba';
-                    break;
-                case 'wednesday':
-                    $weekday = 'Thứ tư';
-                    break;
-                case 'thursday':
-                    $weekday = 'Thứ năm';
-                    break;
-                case 'friday':
-                    $weekday = 'Thứ sáu';
-                    break;
-                case 'saturday':
-                    $weekday = 'Thứ bảy';
-                    break;
-                default:
-                    $weekday = 'Chủ nhật';
-                    break;
-            }
-            return $weekday.', '.date('d/m/Y H:i');
-          }
-          echo sw_get_current_weekday();
-        ?>          
-      </p> </li>
-      <li style="float:right;"><a href="Dangnhap.php"> Đăng nhập</a></li>
-      <li style="float:right;">|</li>      
-      <li style="float:right;"><a href="#"> Sơ đồ</a></li>
-  </ul>    
+<div class="SecondMenu">
+    <ul>
+        <li style="float:left; "><img src="/images/trangchu/lich.gif" width="25" height="18" style="padding-left:6px; padding-right:2px" /> </li>
+        <li style="float:left; ">
+            <p style="font-size:14px; padding-top:2px;" id="timeNow">
+               
+            </p>
+        </li>
+        <%if(usr==null){ %>
+            <li style="float:right;"><a href="/dangnhap"> Đăng nhập</a></li>
+        <%}else{%>
+            <li style="float:right;"><a href="/admin">Chào <%=usr.user.tendaydu%> </a></li>
+            <li style="float:right;">|</li>
+            <li style="float:right;"><a href="/dangxuat"> Đăng xuất</a></li>
+        <%}%>
+        <li style="float:right;">|</li>
+        <li style="float:right;"><a href="/sodo"> Sơ đồ</a></li>
+    </ul>
 </div>

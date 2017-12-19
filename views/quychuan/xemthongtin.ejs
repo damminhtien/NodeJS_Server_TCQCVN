@@ -1,41 +1,56 @@
 <%include ../header%>
-</head>
-<body>
-    <%include ../top%>
-    <div class="container">
-    	<div class="row">
-    		<div class="col-md-8">
-    			<div class="panel panel-primary">
-  					<div class="panel-heading">
-  						<h5><%=quychuan.ten%></h5>
-  					</div>
-  					<div class="panel-body">
-  						<iframe src="./getpdf/:id"></iframe>
-  					</div>
-				</div>
-    		</div>
-    		<div class="col-md-4">
-    			<div class="panel panel-primary">
-  					<div class="panel-heading">
-  						<h5>Thông tin chi tiết</h5>
-  					</div>
-  					<div class="panel-body">
-  						<ul>
-  							<li><%=quychuan.ten%></li>
-  							<li><%=quychuan.kyhieuso%></li>
-  							<li><%=quychuan.quyetdinhso%></li>
-  							<li><%=quychuan.nganhbanhanh%></li>
-  							<li><%=quychuan.linhvuc%></li>
-  							<li><%=quychuan.tags%></li>
-  							<li><%=quychuan.bonganh%></li>
-  							<li><%quychuan.luotxem%></li>
-  							<li><%=quychuan.ghichu%></li>
-  						</ul>
-  					</div>
-				</div>
-    		</div>	
-    	</div>
-    	
-    </div>
-    <%include ../footer%>
-</body>
+    <link rel="stylesheet" href="/stylesheets/top.css">
+    </head>
+
+    <body>
+        <div class="main">
+            <%include ../top%>
+                <div class="container" style="width: 960px; padding-top: 20px;">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h5><%=quychuan.ten%></h5>
+                                </div>
+                                <div class="panel-body">
+                                    <iframe src="/quychuan/getpdf/<%=quychuan.duongdan%>" style="width: 100%;height: 600px"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h5>Thông tin chi tiết</h5>
+                                </div>
+                                <div class="panel-body">
+                                    <ul>
+                                        <li>
+                                            Tên: <%=quychuan.ten%>
+                                        </li>
+                                        <li>
+                                            Ký hiệu số: <%=quychuan.kyhieuso%>
+                                        </li>
+                                        <li>
+                                            Quyết định số: <%=quychuan.quyetdinhso%>
+                                        </li>
+                                        <li>
+                                            Ngày ban hành: <%=quychuan.nganhbanhanh%>
+                                        </li>
+                                        <li>
+                                            Lĩnh vực: <%=quychuan.linhvuc%>
+                                        </li>
+                                        <li>
+                                            Lượt xem: <%=quychuan.luotxem%>
+                                        </li>
+                                        <li>
+                                            Ghi chú: <%=quychuan.ghichu%>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%include ../footer%>
+        </div>
+    </body>

@@ -1,0 +1,8 @@
+<!-- <%include ../header%>
+<link rel="stylesheet" href="/stylesheets/top.css">
+</head>
+<body>
+	<%include ../top%>
+	<%include ../footer%>	
+</body>
+ -->
