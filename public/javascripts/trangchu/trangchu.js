@@ -4,10 +4,17 @@ $("document").ready(() => {
             url: "tintuc/get8maxngaydang/0",
             type: "GET",
             success: function(data) {
+                console.log(data);
                 $("#imgSlide0").prop("src", "images/" + data[0].urlanh);
                 $("#aSlide0").prop("href", "./tintuc/xem/" + data[0].id);
                 $("#aSlide0").html(data[0].ten);
                 $("#atomtat0").prop("href", "./tintuc/xem/" + data[0].id);
+                if (data[0].tomtat.length > 74) {
+                    var l = 74;
+                    while (data[0].tomtat[l] != " ") l--;
+                    var tomtat = data[0].tomtat.substring(0, l) + "...";
+                } else var tomtat = data[0].tomtat;
+                $("#tomtat0").html(tomtat);
                 for (var i = 1; i < 8; i++) {
                     $("#imgSlide" + i).prop("src", "images/" + data[i].urlanh);
                     $("#aSlide" + i).prop("href", "./tintuc/xem/" + data[i].id);
@@ -40,7 +47,9 @@ $("document").ready(() => {
             } else $("#tomtat" + i).css({ "background": "#ffffff", "font-weight": "500", "color": "black" });
         }
     }, 50);
+
     setInterval(getTimeNow, 50);
+
     $("#tra_cuu").click(
         function() {
             if ($("#form_tra_cuu").css('display') == 'none') {
@@ -52,6 +61,25 @@ $("document").ready(() => {
             }
         }
     );
+
+    setInterval(()=>{
+        if($("input[name=key]").val() != ""){
+            $("#btnTim").prop("disabled",false);
+        }
+    },50);
+
+    (async function() {
+        $.ajax({
+            url: "thongbao/get5maxid",
+            type: "GET",
+            success: function(data) {
+                for (var i = 0; i < data.length; i++) {
+                    $("#pthongbao"+i).html(data[i].ten);
+                    $("#thongbao"+i).prop("href", "/thongbao/xem/" + data[i].id);
+                }
+            }
+        });
+    })();
 });
 
 function getTimeNow() {

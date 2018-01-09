@@ -1,0 +1,96 @@
+<%include ../header%>
+<link rel="stylesheet" href="/stylesheets/top.css">
+</head>
+<body>
+	<div class="main">
+		<%include ../top%>
+			<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered example">
+				<caption>Kết quả chính xác</caption>
+				<thead>
+					<tr class="success">
+						<th>Tên</th>
+						<th>Quyết định số</th>
+						<th>Ký hiệu số</th>
+						<th>Ngày ban hành</th>
+						<th>Lĩnh vực</th>
+						<th>Xem</th>
+					</tr>
+				</thead>
+				<tbody>
+					<%arrFixKey.forEach(function(data,index){%>
+					<tr>
+						<td><%=data.ten%></td>
+						<td><%=data.quyetdinhso%></td>
+						<td><%=data.kyhieuso%></td>
+						<td><%=data.ngaybanhanh%></td>
+						<td><%=data.linhvuc%></td>
+						<td><a href="/<%=vanban%>/xem/<%=data.id%>" title="Xem">Xem</a></td>
+					</tr>
+					<%})%>
+				</tbody>
+			</table>
+			<%if(arrHasAll.length!=0){%>
+			<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered example">
+				<caption>Kết quả gần chính xác</caption>
+				<thead>
+					<tr class="success">
+						<th>Tên</th>
+						<th>Quyết định số</th>
+						<th>Ký hiệu số</th>
+						<th>Ngày ban hành</th>
+						<th>Lĩnh vực</th>
+						<th>Xem</th>
+					</tr>
+				</thead>
+				<tbody>
+					<%arrHasAll.forEach(function(data,index){%>
+					<tr>
+						<td><%=data.ten%></td>
+						<td><%=data.quyetdinhso%></td>
+						<td><%=data.kyhieuso%></td>
+						<td><%=data.ngaybanhanh%></td>
+						<td><%=data.linhvuc%></td>
+						<td><a href="/<%=vanban%>/xem/<%=data.id%>" title="Xem">Xem</a></td>
+					</tr>
+					<%})%>
+				</tbody>
+			</table>
+			<%}%>
+			<%if(arrHasSome.length!=0){%>
+			<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered example">
+				<caption>Kết quả liên quan</caption>
+				<thead>
+					<tr class="success">
+						<th>Tên</th>
+						<th>Quyết định số</th>
+						<th>Ký hiệu số</th>
+						<th>Ngày ban hành</th>
+						<th>Lĩnh vực</th>
+						<th>Xem</th>
+					</tr>
+				</thead>
+				<tbody>
+					<%arrHasSome.forEach(function(data,index){%>
+					<tr>
+						<td><%=data.ten%></td>
+						<td><%=data.quyetdinhso%></td>
+						<td><%=data.kyhieuso%></td>
+						<td><%=data.ngaybanhanh%></td>
+						<td><%=data.linhvuc%></td>
+						<td><a href="/<%=vanban%>/xem/<%=data.id%>" title="Xem">Xem</a></td>
+					</tr>
+					<%})%>
+				</tbody>
+			</table>
+			<%}%>
+		<%include ../footer%>	
+	</div>
+	<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="/javascripts/admin/jquery.dataTables.min.js"></script>
+    <script src="/javascripts/admin/dataTables.bootstrap.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function() {
+        	$('.example').dataTable();
+		} );
+    </script>
+</body>

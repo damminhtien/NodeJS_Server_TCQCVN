@@ -81,25 +81,25 @@ var storageAnh = multer.diskStorage({
         cb(null, 'public/images/');
     },
     filename: function(req, file, cb) {
-        cb(null, file.originalname);
+        cb(null, req.body.thoigian.replace(/:/g, '_') + file.originalname.replace(/ /g, '_'));
     }
 })
 
 var uploadAnh = multer({ storage: storageAnh });
 
 router.post('/viet/byid=:id', uploadAnh.single('ava'), (req, res) => {
-    var id = req.params.id,
+    var byid = req.params.id,
         tieude = req.body.ten,
         tomtat = req.body.tomtat,
         noidung = req.body.noidung,
-        thoigian = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
+        thoigian = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '').replace(/ /g, '_').substring(0,17);
         if(req.file == null) var filename = "default12345zxc.png"
-        else var filename = req.file.originalname;
+        else var filename = req.body.thoigian.replace(/:/g, '_') + req.file.originalname.replace(/ /g, '_');
     pool.connect((err, client, release) => {
         if (err) {
             return console.error('Error acquiring client', err.stack);
         }
-        client.query("INSERT INTO tintuc(ten,tomtat,noidung,idquantridang,ngaydang,urlanh) VALUES('" + tieude + "','" + tomtat + "','" + noidung + "'," + id + ",'" + thoigian + "','" + filename + "')", (err, result) => {
+        client.query("INSERT INTO tintuc(ten,tomtat,noidung,idquantridang,ngaydang,urlanh) VALUES('" + tieude + "','" + tomtat + "','" + noidung + "'," + byid + ",'" + thoigian + "','" + filename + "')", (err, result) => {
             release();
             if (err) {
                 res.end();
@@ -122,7 +122,7 @@ router.get('/sua/:id', (req, res) => {
                 res.end();
                 return console.error('Error executing query', err.stack)
             }
-            res.render("tintuc/sua",{usr: req._passport.session, tintuc: result.rows[0]});
+            res.render("tintuc/suaTintuc",{usr: req._passport.session, tintuc: result.rows[0]});
         })
     })
 })
@@ -132,7 +132,7 @@ router.post('/sua', uploadAnh.single('ava'), (req, res) => {
         name = req.body.ten,
         tomtat = req.body.tomtat,
         noidung = req.body.noidung,
-        ava = req.file.originalname;
+        ava = req.body.thoigian.replace(/:/g, '_') + req.file.originalname;
     pool.connect((err, client, release) => {
         if (err) {
             return console.error('Error acquiring client', err.stack);
@@ -166,7 +166,7 @@ router.get("/tin=:id", (req, res) => {
     })
 });
 
-router.get("/laythongtin/id=:id", (req, res) => {
+router.get("/thongtin/:id", (req, res) => {
     var id = req.params.id;
     pool.connect((err, client, release) => {
         if (err) {
@@ -178,7 +178,7 @@ router.get("/laythongtin/id=:id", (req, res) => {
                 res.end();
                 return console.error('Error executing query', err.stack)
             }
-            res.send(result.rows);
+            res.send(result.rows[0]);
         })
     })
 })

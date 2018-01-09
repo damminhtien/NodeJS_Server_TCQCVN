@@ -3,59 +3,47 @@
 	<div class="col-md-8" style="color:black; height:300px;">
 		<h2 style="text-align:center">Tra Cứu</h2>
             </br>
-            <form id="" action="" method="post">
+            <form method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded" class="form-horizontal">
                 <div class="row" style="padding-left:25px">
                     <div class="col-md-6">
                         <label>Tiêu đề 1</label>
                         <span class="invalid-feedback" style="color:red">
-                            *Lựa chọn   
+                            Quy chuẩn / Tiêu chuẩn   
                         </span>
                     	</br>
-                        <select name="" style="width:250px">
-                        	<option value="">Tất cả</option>
-                        	<option value="">Lựa chọn 1</option>
-                        	<option value="">Lựa chọn 2</option>
-                        	<option value="">Lựa chọn 3</option>
+                        <select name="vanban" style="width:250px">
+                        	<option value="quychuan">Quy chuẩn</option>
+                        	<option value="tieuchuan">Tiêu chuẩn</option>
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <label for="validationCustom01">Tiêu đề 2</label>
+                        <label>Từ khóa</label>
                         <span class="invalid-feedback" style="color:red">
-                            *Lựa chọn   
+                            *Không bỏ trống   
                         </span>
-                    	</br>
-                        <select name="" style="width:250px">
-                        	<option value="">Tất cả</option>
-                        	<option value="">Lựa chọn 1</option>
-                        	<option value="">Lựa chọn 2</option>
-                        	<option value="">Lựa chọn 3</option>
-                        </select>
+                        </br>
+                        <input type="text" name="key" style="width:250px">
                     </div>
                 </div>
                 </br>
                 <div class="row" style="padding-left:25px">
                     <div class="col-md-6">
-                        <label for="validationCustom01">Tiêu đề 3</label>
+                        <label for="validationCustom01">Ngày ban hành</label>
                         <span class="invalid-feedback" style="color:red">
-                            *Lựa chọn   
+                            Từ ngày  
                         </span>
-                    	</br>
-                        <select name="" style="width:250px">
-                        	<option value="">Tất cả</option>
-                        	<option value="">Lựa chọn 1</option>
-                        	<option value="">Lựa chọn 2</option>
-                        	<option value="">Lựa chọn 3</option>
-                        </select>
+                        </br>
+                        <input type="date" class="form-control" name="tungay">
                     </div>
                     <div class="col-md-6">
-                    	<label>Từ khóa</label>
+                        <label for="validationCustom01">Ngày ban hành</label>
                         <span class="invalid-feedback" style="color:red">
-                            *Không bỏ trống   
+                            Đến ngày   
                         </span>
-                    	</br>
-                    	<input type="text" name="" style="width:250px">
-                    	</br></br>
-                    	<button class="btn btn-primary" type="submit">Tìm</button>
+                        </br>
+                        <input  type="date" class="form-control" name="denngay">
+                        </br></br>
+                        <button class="btn btn-primary" type="submit" disabled id="btnTim">Tìm</button>
                     </div>
                 </div>
             </form>

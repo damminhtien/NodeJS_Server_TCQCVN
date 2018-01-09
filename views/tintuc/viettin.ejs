@@ -4,6 +4,7 @@
     <body>
         <form method="post" accept-charset="utf-8" enctype="multipart/form-data" class="form-horizontal">
             <div class="form-group">
+                <input type="hidden" class="form-control" name="thoigian" value="<%= new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '').replace(/ /g, '_')%>" >
                 <label class="control-label col-sm-2">Tiêu đề:</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" name="ten" placeholder="Tiêu đề...">
@@ -29,6 +30,7 @@
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10"><button type="submit" class="btn btn-success" class="form-control">Đăng bài</button></div>
             </div>
+            
         </form>
     </body>
     <script src='/javascripts/tinymce/js/tinymce/tinymce.min.js'></script>

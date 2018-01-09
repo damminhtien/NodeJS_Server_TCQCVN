@@ -128,12 +128,28 @@ router.get("/xem", (req, res) => {
                     res.end();
                     return console.error('Error executing query', err.stack)
                 }
-                res.render("thongbao/xem", { ten: req.params.table, data: result.rows });
+                res.render("thongbao/xem", { data: result.rows });
             })
         })
     } else {
         res.redirect("/dangnhap");
     }
+});
+
+router.get("/xem/:id", (req, res) => {
+        pool.connect((err, client, release) => {
+            if (err) {
+                return console.error('Error acquiring client', err.stack);
+            }
+            client.query("SELECT * FROM thongbao ORDER BY id ASC WHERE id="+id, (err, result) => {
+                release();
+                if (err) {
+                    res.end();
+                    return console.error('Error executing query', err.stack)
+                }
+                res.render("thongbao/xemthongtin", { data: result.rows[0] });
+            })
+        })
 });
 
 router.get("/get5maxid", (req, res) => {
@@ -142,7 +158,7 @@ router.get("/get5maxid", (req, res) => {
         if (err) {
             return console.error('Error acquiring client', err.stack);
         }
-        client.query("SELECT id,ten,tomtat,urlanh,ngaydang FROM tintuc ORDER BY id DESC LIMIT 5", (err, result) => {
+        client.query("SELECT * FROM thongbao ORDER BY id DESC LIMIT 5", (err, result) => {
             release();
             if (err) {
                 res.end();
